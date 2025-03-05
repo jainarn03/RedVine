@@ -1,0 +1,43 @@
+﻿@page
+@model ProfileModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="container mt-4">
+    <h2>User Profile</h2>
+    <div class="row">
+        <!-- Left Side: Profile Picture & User Info -->
+        <div class="col-md-6">
+            <div class="card p-3">
+                <div class="text-center">
+                    <img src="@Model.ProfilePicture" class="rounded-circle shadow" width="150" alt="Profile Picture">
+                    <br />
+                    <button class="btn btn-outline-primary mt-2">Change Picture</button>
+                </div>
+                <hr />
+                <p><strong>Name:</strong> @Model.UserName</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Date of Birth:</strong> @Model.DOB.ToShortDateString()</p>
+                <button class="btn btn-warning btn-sm">Change Password</button>
+            </div>
+        </div>
+
+        <!-- Right Side: Overview (Liked, Private, Blocked) -->
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4>Overview</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">Liked Items: <strong>@Model.LikedItems</strong></li>
+                    <li class="list-group-item">Private Posts: <strong>@Model.PrivatePosts</strong></li>
+                    <li class="list-group-item">Blocked Users: <strong>@Model.BlockedUsers</strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Button -->
+    <div class="text-center mt-4">
+        <button class="btn btn-danger">Log Out</button>
+    </div>
+</div>
