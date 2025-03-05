@@ -1,0 +1,14 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<h2>RedVine Photo Gallery</h2>
+<div class="row">
+    @foreach (var image in Model)
+    {
+        <div class="col-md-4">
+            <img src="@image" class="img-fluid rounded shadow" alt="Gallery Image">
+        </div>
+    }
+</div>

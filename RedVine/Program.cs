@@ -1,6 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews(); // Enable MVC
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
@@ -16,6 +17,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+// Set default route to HomeController
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+
+app.MapRazorPages(); // Keep this for Razor Pages if needed
 
 app.Run();
