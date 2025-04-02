@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using RedVine.Areas.Identity.Data
+@inject SignInManager<RedVineUser> signInManager
+@inject UserManager<RedVineUser> userManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,11 +20,14 @@
                 <li class="nav-item"><a class="nav-link" href="/Gallery">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="/Upload">Upload</a></li>
                 <li class="nav-item"><a class="nav-link" href="/Profile">Profile</a></li>
+
+                @await Html.PartialAsync("_LoginPartial")
             </ul>
         </div>
     </nav>
     <div class="container mt-4">
         @RenderBody()
     </div>
+    @await RenderSectionAsync("Scripts", required:false)
 </body>
 </html>

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RedVine.Areas.Identity.Data;
 using RedVine.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("RedVineContextConnection") ?? throw new InvalidOperationException("Connection string 'RedVineContextConnection' not found.");
