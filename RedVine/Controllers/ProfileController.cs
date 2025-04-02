@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RedVine.Areas.Identity.Data;
 
 namespace RedVine.Controllers
 {
@@ -6,7 +7,8 @@ namespace RedVine.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var data = new RedVineUser { Avatar = "test", DOB=DateTime.Now, Created=DateTime.Now, UsernameReal="Temp", Likes = [], Id=new Guid().ToString() };
+            return View(data);
         }
     }
 }

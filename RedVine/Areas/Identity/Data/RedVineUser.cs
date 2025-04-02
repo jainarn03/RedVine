@@ -11,9 +11,13 @@ namespace RedVine.Areas.Identity.Data;
 public class RedVineUser : IdentityUser
 { 
     public string? Avatar { get; set;  }
-    public string? Username { get; set; }
+    public string? UsernameReal { get; set; }
     [StringLength(500, ErrorMessage = "Descprtion must be 500 or less characters")]
     public string? Description { get; set; }
     public List<Guid>? Likes { get; set; } = [];
+    [Required]
+    public DateTime? DOB { get; set; }
+    [Required]
+    public DateTime? Created { get; set; }
 }
 
