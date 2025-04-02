@@ -1,4 +1,12 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using RedVine.Data;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("RedVineContextConnection") ?? throw new InvalidOperationException("Connection string 'RedVineContextConnection' not found.");
+
+builder.Services.AddDbContext<RedVineContext>(options => options.UseSqlite(connectionString));
+
+builder.Services.AddDefaultIdentity<RedVineUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<RedVineContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews(); // Enable MVC
