@@ -5,11 +5,8 @@
 @model List<Chat>
 
 <div class="container-fluid" style="height: calc(100vh - 56px);">
-    <!-- Adjust height based on navbar -->
     <div class="row h-100">
-        <!-- Chat Messages -->
         <div class="col-9 d-flex flex-column">
-            <!-- Messages Area -->
             <div class="overflow-auto flex-grow-1" style="padding: 10px;">
                 <ul class="list-unstyled">
                     @foreach (var message in Model[0].Messages)
@@ -29,7 +26,6 @@
                 </ul>
             </div>
 
-            <!-- Send Message Area -->
             <div class="p-3" style="flex-shrink: 0;">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Send a message to Wisepenguin" />
@@ -38,7 +34,6 @@
             </div>
         </div>
 
-        <!-- Sidebar -->
         <div class="col-3 bg-light text-dark d-flex flex-column flex-shrink-0 p-3"
              style="overflow-y: auto;">
             <h2>Chats</h2>
@@ -49,7 +44,7 @@
                     <li class="nav-item mb-2 @((chat == Model.First()) ? "active" : "")">
                         <div class="border border-black rounded p-3" style="@((chat == Model.First()) ? "background-color:#ADD8E6" : "")">
                             <h4>@chat.Recipiant</h4>
-                            <p>@chat.Messages.First().Message</p>
+                            <p>@chat.Messages.Last().Message</p>
                         </div>
                     </li>
                 }
