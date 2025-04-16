@@ -3,6 +3,7 @@
     ViewData["Title"] = "Gallery";
 }
 
+<div class="container">
 <h2>RedVine Photo Gallery</h2>
 <div class="row">
     @foreach (var image in Model)
@@ -11,4 +12,5 @@
             <img src="@image" class="img-fluid rounded shadow" alt="Gallery Image">
         </div>
     }
+</div>
 </div>

@@ -11,12 +11,12 @@
         <div class="col-md-6">
             <div class="card p-3">
                 <div class="text-center">
-                    <img src="@Model.Avatar" class="rounded-circle shadow" width="150" alt="Profile Picture">
+                    <img src="@Model.Avatar" class="rounded-circle shadow" width="150" height="150" alt="Profile Picture">
                     <br />
                     <button class="btn btn-outline-primary mt-2">Change Picture</button>
                 </div>
                 <hr />
-                <p><strong>Name:</strong> @Model.UserName</p>
+                <p><strong>Name:</strong> @Model.UsernameReal</p>
                 <p><strong>Email:</strong> @Model.Email</p>
                 <p><strong>Date of Birth:</strong> @Model.DOB.ToString()</p>
                 <button class="btn btn-warning btn-sm">Change Password</button>
@@ -28,9 +28,9 @@
             <div class="card p-3">
                 <h4>Overview</h4>
                 <ul class="list-group">
-                    <li class="list-group-item">Liked Items: <strong>@Model.Likes</strong></li>
-                    <li class="list-group-item">Private Posts: <strong>@Model.UsernameReal</strong></li>
-                    <li class="list-group-item">Blocked Users: <strong>@Model.UsernameReal</strong></li>
+                    <li class="list-group-item">Liked Items: <strong>@Model.Likes.Count()</strong></li>
+                    <li class="list-group-item">Private Posts: <strong>0</strong></li>
+                    <li class="list-group-item">Blocked Users: <strong>0</strong></li>
                 </ul>
             </div>
         </div>

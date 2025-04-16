@@ -2,6 +2,7 @@
     ViewData["Title"] = "Upload Image";
 }
 
+<div class="container">
 <h2>Upload an Image</h2>
 <form asp-controller="Upload" asp-action="UploadFile" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -14,3 +15,4 @@
 {
     <p class="alert alert-info mt-2">@ViewBag.Message</p>
 }
+</div>
