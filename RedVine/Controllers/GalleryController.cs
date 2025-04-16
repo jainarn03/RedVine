@@ -9,9 +9,9 @@ namespace RedVine.Controllers
         {
             var images = new List<string>
             {
-                "/images/sample1.jpg",
-                "/images/sample2.jpg",
-                "/images/sample3.jpg"
+                "/assets/grandDad.png",
+                "/assets/waltenr.png",
+                "/assets/hhh.png"
             };
             return View(images);
         }
